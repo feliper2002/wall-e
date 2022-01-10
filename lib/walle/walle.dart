@@ -72,15 +72,19 @@ class WallePaint extends CustomPainter {
         ;
 
     Path eyeLeftPath = Path()
-          ..moveTo(size.width * .48, size.height * .36)
-          ..quadraticBezierTo(size.width * .258, size.height * .36,
-              size.width * .264, size.height * .364)
-          ..quadraticBezierTo(size.width * .21, size.height * .43,
-              size.width * .3, size.height * .47)
-          ..quadraticBezierTo(size.width * .323, size.height * .49,
-              size.width * .37, size.height * .47)
-          ..quadraticBezierTo(size.width * .42, size.height * .46,
-              size.width * .47, size.height * .36)
+          ..moveTo(size.width * .42, size.height * .326)
+          ..quadraticBezierTo(size.width * .43, size.height * .32,
+              size.width * .41, size.height * .326)
+          ..quadraticBezierTo(size.width * .36, size.height * .3478,
+              size.width * .28, size.height * .371)
+          ..quadraticBezierTo(size.width * .224, size.height * .4,
+              size.width * .224, size.height * .43)
+          ..quadraticBezierTo(size.width * .282, size.height * .49,
+              size.width * .354, size.height * .485)
+          ..quadraticBezierTo(size.width * .421, size.height * .464,
+              size.width * .456, size.height * .419)
+          ..quadraticBezierTo(size.width * .421, size.height * .325,
+              size.width * .41, size.height * .326)
         //
         ;
 
@@ -90,6 +94,18 @@ class WallePaint extends CustomPainter {
     //////////////////// [HEAD] ////////////////////
 
     //////////////////// [HEAD] ////////////////////
+    ///
+    //////////////////// [ARMS] ////////////////////
+
+    //////////////////// [ARMS] ////////////////////
+    ///
+    //////////////////// [BODY] ////////////////////
+
+    //////////////////// [BODY] ////////////////////
+    ///
+    //////////////////// [WHEELS] ////////////////////
+
+    //////////////////// [WHEELS] ////////////////////
   }
 
   @override
