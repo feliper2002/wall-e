@@ -47,8 +47,15 @@ class WallePaint extends CustomPainter {
     return m.storage;
   }
 
-  drawPathWithStroke(Canvas canvas, Path path, Paint basePaint, Paint stroke) {
-    canvas.drawPath(path, stroke);
+  drawPathWithStroke(Canvas canvas, Path path, Paint basePaint,
+      {double strokeWidth = 2, Color strokeColor = Colors.black}) {
+    final drawSTROKE = Paint()
+          ..color = strokeColor
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = strokeWidth
+        //
+        ;
+    canvas.drawPath(path, drawSTROKE);
     canvas.drawPath(path, basePaint);
   }
 
@@ -61,12 +68,6 @@ class WallePaint extends CustomPainter {
     final eyeBasePaint = Paint()
           ..color = AppColors.eyeBase
           ..style = PaintingStyle.fill
-        //
-        ;
-    final eyeBasePaintSTROKE = Paint()
-          ..color = Colors.black
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 2
         //
         ;
 
@@ -83,7 +84,7 @@ class WallePaint extends CustomPainter {
         //
         ;
 
-    drawPathWithStroke(canvas, eyeLeftPath, eyeBasePaint, eyeBasePaintSTROKE);
+    drawPathWithStroke(canvas, eyeLeftPath, eyeBasePaint);
     //////////////////// [EYE] ////////////////////
     ///
     //////////////////// [HEAD] ////////////////////
