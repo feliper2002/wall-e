@@ -15,7 +15,6 @@ class Walle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: CustomPaint(
         painter: WallePaint(),
@@ -35,14 +34,14 @@ class WallePaint extends CustomPainter {
     return radians;
   }
 
-  Float64List rotatePath(Offset origin, double degrees) {
+  Float64List rotatePath(Offset position, double degrees) {
     Matrix4 matrix = Matrix4.identity();
 
     var m = matrix
       ..clone()
-      ..translate(origin.dx, origin.dy)
+      ..translate(position.dx, position.dy)
       ..multiply(Matrix4.rotationZ(rotateRadians(degrees)))
-      ..translate(-origin.dx, -origin.dy);
+      ..translate(-position.dx, -position.dy);
 
     return m.storage;
   }
@@ -57,6 +56,26 @@ class WallePaint extends CustomPainter {
         ;
     canvas.drawPath(path, drawSTROKE);
     canvas.drawPath(path, basePaint);
+  }
+
+  drawBottomWheel(Canvas canvas, Size size, Offset position,
+      {bool small = true}) {
+    final wheelsBottomPaint = Paint()..color = Colors.black;
+    final wheelBottomHeight = size.height * .0032;
+
+    if (small) {
+      final smallWheelRect = Rect.fromCenter(
+          center: position,
+          width: size.width * .0336,
+          height: wheelBottomHeight);
+      canvas.drawRect(smallWheelRect, wheelsBottomPaint);
+    } else {
+      final bigWheelRect = Rect.fromCenter(
+          center: position,
+          width: size.width * .0487,
+          height: wheelBottomHeight);
+      canvas.drawRect(bigWheelRect, wheelsBottomPaint);
+    }
   }
 
   @override
@@ -102,6 +121,58 @@ class WallePaint extends CustomPainter {
     //////////////////// [BODY] ////////////////////
     ///
     //////////////////// [WHEELS] ////////////////////
+
+    ////////////// {TOP BIG PART FOOT} //////////////
+
+    final bigWheelPaint = Paint()..color = AppColors.eyeBase;
+    final bigWheelDimensions = Offset(size.width * .2485, size.height * .0878);
+
+    final leftBigWheelCenterPos = Offset(size.width * .338, size.height * .946);
+    final rightBigWheelCenterPos =
+        Offset(size.width * .658, size.height * .946);
+
+    final leftBigWheelRect = Rect.fromCenter(
+        center: leftBigWheelCenterPos,
+        width: bigWheelDimensions.dx,
+        height: bigWheelDimensions.dy);
+
+    final rightBigWheelRect = Rect.fromCenter(
+        center: rightBigWheelCenterPos,
+        width: bigWheelDimensions.dx,
+        height: bigWheelDimensions.dy);
+
+    canvas.drawRect(leftBigWheelRect, bigWheelPaint);
+    canvas.drawRect(rightBigWheelRect, bigWheelPaint);
+
+    ////////////// {TOP BIG PART FOOT} //////////////
+
+    ////////////// {BOTTOM PART FOOT} //////////////
+
+    final wheelBottomTopDistancePos = size.height * .992;
+
+    final wheelBottomCenterPositions = <Offset>[
+      Offset(size.width * .24, wheelBottomTopDistancePos), // [1] bottom pos
+      Offset(size.width * .304, wheelBottomTopDistancePos), // [2] bottom pos
+      Offset(size.width * .37, wheelBottomTopDistancePos), // [3] bottom pos
+      Offset(size.width * .432, wheelBottomTopDistancePos), // [4] bottom pos
+      //////////////////////////////////////////////////////////////////
+      Offset(size.width * .562, wheelBottomTopDistancePos), // [5] bottom pos
+      Offset(size.width * .624, wheelBottomTopDistancePos), // [6] bottom pos
+      Offset(size.width * .69, wheelBottomTopDistancePos), // [7] bottom pos
+      Offset(size.width * .752, wheelBottomTopDistancePos), // [8] bottom pos
+    ];
+
+    drawBottomWheel(canvas, size, wheelBottomCenterPositions[0]);
+    drawBottomWheel(canvas, size, wheelBottomCenterPositions[1], small: false);
+    drawBottomWheel(canvas, size, wheelBottomCenterPositions[2], small: false);
+    drawBottomWheel(canvas, size, wheelBottomCenterPositions[3]);
+
+    drawBottomWheel(canvas, size, wheelBottomCenterPositions[4]);
+    drawBottomWheel(canvas, size, wheelBottomCenterPositions[5], small: false);
+    drawBottomWheel(canvas, size, wheelBottomCenterPositions[6], small: false);
+    drawBottomWheel(canvas, size, wheelBottomCenterPositions[7]);
+
+    ////////////// {BOTTOM PART FOOT} //////////////
 
     //////////////////// [WHEELS] ////////////////////
   }
