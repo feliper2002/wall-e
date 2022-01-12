@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
+  static const bg = Color(0xffC4C4C4);
+
   /////////////////////////////// [BODY] ///////////////////////////////
 
   static const bodyGradient = <Color>[
@@ -9,7 +11,19 @@ class AppColors {
     Color(0xffC25C11),
   ];
 
+  static const bigShadowGradient = <Color>[
+    Color(0x003C222D),
+    Color(0xff3C222D),
+  ];
+
+  static const shadowBaseSolid = Color(0xff3C222D);
+
   static const redCircleE = Color(0xffC80F31);
+
+  static const reinforcementGradient = <Color>[
+    Color(0xff61534A),
+    Color(0xff26272C),
+  ];
 
   /////////////////////////////// [ARMS] ///////////////////////////////
 
