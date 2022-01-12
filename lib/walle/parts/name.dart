@@ -52,6 +52,48 @@ class Name {
 
     ////////////////////// [W] //////////////////////
 
+    ////////////////////// [A] //////////////////////
+
+    final aPath = Path()
+          ..moveTo(
+              xConv(174.1, realWidth, size), yConv(568.8, realHeight, size))
+          ..lineTo(xConv(174.1, realWidth, size), yConv(560, realHeight, size))
+          ..quadraticBezierTo(
+              xConv(174.53, realWidth, size),
+              yConv(556.7, realHeight, size),
+              xConv(177.9, realWidth, size),
+              yConv(555.7, realHeight, size))
+          ..lineTo(
+              xConv(188.41, realWidth, size), yConv(555.7, realHeight, size))
+          ..quadraticBezierTo(
+              xConv(192.9, realWidth, size),
+              yConv(557, realHeight, size),
+              xConv(192.64, realWidth, size),
+              yConv(559.87, realHeight, size))
+          ..lineTo(
+              xConv(192.64, realWidth, size), yConv(568.8, realHeight, size))
+          ..lineTo(
+              xConv(188.34, realWidth, size), yConv(568.8, realHeight, size))
+          ..lineTo(
+              xConv(188.34, realWidth, size), yConv(564.84, realHeight, size))
+          ..lineTo(
+              xConv(178.42, realWidth, size), yConv(564.84, realHeight, size))
+          ..lineTo(
+              xConv(178.42, realWidth, size), yConv(568.8, realHeight, size))
+        //
+        ;
+
+    canvas.drawPath(aPath, lettersPaint);
+    canvas.drawRect(
+        Rect.fromCenter(
+            center: Offset(
+                xConv(183.7, realWidth, size), yConv(561, realHeight, size)),
+            width: xConv(10, realWidth, size),
+            height: yConv(3, realHeight, size)),
+        Paint()..color = AppColors.bodyGradient[2]);
+
+    ////////////////////// [A] //////////////////////
+
     ////////////////////// [DOT] //////////////////////
 
     canvas.drawCircle(
