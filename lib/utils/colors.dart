@@ -75,4 +75,14 @@ class AppColors {
     const Color(0xff501830).withOpacity(.3),
     const Color(0xff64203A).withOpacity(0),
   ];
+
+  /////////////////////////////// [WHEELS] ///////////////////////////////
+
+  static const bigWheelGradint = <Color>[
+    Color(0xff110E19),
+    Color(0xff1A1420),
+    Color(0xff231C25),
+  ];
+
+  static const middleBigWheelsLayer = Color(0xff74605D);
 }

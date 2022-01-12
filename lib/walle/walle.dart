@@ -9,8 +9,8 @@ class Walle extends StatelessWidget {
   final double width;
   const Walle({
     Key? key,
-    this.height = 375,
-    this.width = 667,
+    this.height = 664,
+    this.width = 372,
   }) : super(key: key);
 
   @override
@@ -124,7 +124,6 @@ class WallePaint extends CustomPainter {
 
     ////////////// {TOP BIG PART FOOT} //////////////
 
-    final bigWheelPaint = Paint()..color = AppColors.eyeBase;
     final bigWheelDimensions = Offset(size.width * .2485, size.height * .0878);
 
     final leftBigWheelCenterPos = Offset(size.width * .338, size.height * .946);
@@ -141,14 +140,99 @@ class WallePaint extends CustomPainter {
         width: bigWheelDimensions.dx,
         height: bigWheelDimensions.dy);
 
-    canvas.drawRect(leftBigWheelRect, bigWheelPaint);
-    canvas.drawRect(rightBigWheelRect, bigWheelPaint);
+    final bigWheelPaint = Paint()
+          ..shader = const LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: AppColors.bigWheelGradint,
+          ).createShader(leftBigWheelRect)
+        //
+        ;
+
+    final leftWheelPath = Path()..addRect(leftBigWheelRect);
+    final rightWheelPath = Path()..addRect(rightBigWheelRect);
+
+    drawPathWithStroke(canvas, leftWheelPath, bigWheelPaint,
+        strokeColor: AppColors.middleBigWheelsLayer, strokeWidth: 3);
+    drawPathWithStroke(canvas, rightWheelPath, bigWheelPaint,
+        strokeColor: AppColors.middleBigWheelsLayer, strokeWidth: 3);
 
     ////////////// {TOP BIG PART FOOT} //////////////
 
+    ////////////// {MIDDLE BIG PART FOOT} //////////////
+
+    final middlePartsPaint = Paint()..color = AppColors.middleBigWheelsLayer;
+
+    /// middleType[columnIndex + 1][rowIndex + 1]
+
+    final middleType11 = Path()
+          ..moveTo(size.width * .224, size.height * .9175)
+          ..lineTo(size.width * .224, size.height * .9235)
+          ..lineTo(size.width * .2453, size.height * .9235)
+          ..lineTo(size.width * .264, size.height * .92)
+          ..lineTo(size.width * .264, size.height * .913)
+        //
+        ;
+    final middleType12 = Path()
+          ..moveTo(size.width * .224, size.height * .943)
+          ..lineTo(size.width * .224, size.height * .95)
+          ..lineTo(size.width * .2453, size.height * .95)
+          ..lineTo(size.width * .264, size.height * .946)
+          ..lineTo(size.width * .264, size.height * .93853)
+        //
+        ;
+    final middleType13 = Path()
+          ..moveTo(size.width * .224, size.height * .9685)
+          ..lineTo(size.width * .224, size.height * .974)
+          ..lineTo(size.width * .2453, size.height * .974)
+          ..lineTo(size.width * .264, size.height * .9715)
+          ..lineTo(size.width * .264, size.height * .964)
+        //
+        ;
+    final middleType21 = Path()
+          ..moveTo(size.width * .28, size.height * .91)
+          ..lineTo(size.width * .28, size.height * .92)
+          ..lineTo(size.width * .2928, size.height * .916)
+          ..lineTo(size.width * .3177, size.height * .9244)
+          ..lineTo(size.width * .3349, size.height * .9244)
+          ..lineTo(size.width * .3349, size.height * .91925)
+          ..lineTo(size.width * .296, size.height * .908)
+        //
+        ;
+    final middleType22 = Path()
+          ..moveTo(size.width * .28, size.height * .937)
+          ..lineTo(size.width * .28, size.height * .9445)
+          ..lineTo(size.width * .2928, size.height * .9424)
+          ..lineTo(size.width * .3177, size.height * .95)
+          ..lineTo(size.width * .3349, size.height * .95)
+          ..lineTo(size.width * .3349, size.height * .945)
+          ..lineTo(size.width * .296, size.height * .934)
+        //
+        ;
+
+    drawPathWithStroke(canvas, middleType11, middlePartsPaint);
+    drawPathWithStroke(canvas, middleType12, middlePartsPaint);
+    drawPathWithStroke(canvas, middleType13, middlePartsPaint);
+
+    drawPathWithStroke(canvas, middleType21, middlePartsPaint);
+    drawPathWithStroke(canvas, middleType22, middlePartsPaint);
+
+    ////////////// {[Rectangles]} //////////////
+
+    final firstMiddleRectangle = Rect.fromCenter(
+        center: Offset(size.width * .335, size.height * .93),
+        width: size.width * .245,
+        height: size.height * .0015);
+
+    canvas.drawRect(firstMiddleRectangle, middlePartsPaint);
+
+    ////////////// {[Rectangles]} //////////////
+
+    ////////////// {MIDDLE BIG PART FOOT} //////////////
+
     ////////////// {BOTTOM PART FOOT} //////////////
 
-    final wheelBottomTopDistancePos = size.height * .992;
+    final wheelBottomTopDistancePos = size.height * .993;
 
     final wheelBottomCenterPositions = <Offset>[
       Offset(size.width * .24, wheelBottomTopDistancePos), // [1] bottom pos
