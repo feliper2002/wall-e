@@ -82,6 +82,18 @@ class AppColors {
 
   static const chestYellow = Color(0xffFBE992);
 
+  //// {Shoulders}
+
+  static const shouldersRadial = <Color>[
+    Color(0xff504947),
+    Color(0xffAE9F9B),
+  ];
+
+  static const middleRectangleShouldersLinear = <Color>[
+    Color(0xffDBC3BF),
+    Color(0xffC6B2AE),
+  ];
+
   /////////////////////////////// [ARMS] ///////////////////////////////
 
   static const handsGrey = Color(0xffC4C4C4);
