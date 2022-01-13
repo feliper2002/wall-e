@@ -12,6 +12,23 @@ class Chest {
     _draw();
   }
 
+  _drawBarrier(
+      {double x = 0,
+      double y = 0,
+      double height = 2,
+      double width = 33,
+      Color color = AppColors.bg}) {
+    final barrier = Rect.fromCenter(
+        center: Offset(xConv(x, realWidth, size), yConv(y, realHeight, size)),
+        width: xConv(width, realWidth, size),
+        height: yConv(height, realHeight, size));
+
+    final barrierPaint = Paint()..color = color;
+    final barrierPath = Path()..addRect(barrier);
+
+    drawPathWithStroke(canvas, barrierPath, barrierPaint);
+  }
+
   _drawOvalYellow(
       {double x = 0, double y = 0, double height = 2.26, double width = 22.5}) {
     final ovalYellow = Rect.fromCenter(
@@ -161,6 +178,25 @@ class Chest {
         strokeWidth: xConv(2.6, realWidth, size));
 
     /////////////////////// {SUN} ///////////////////////
+
+    /////////////////////// {AIR} ///////////////////////
+
+    canvas.drawOval(
+        Rect.fromCenter(
+            center: Offset(
+                xConv(160, realWidth, size), yConv(417, realHeight, size)),
+            width: xConv(34.5, realWidth, size),
+            height: yConv(18.34, realHeight, size)),
+        Paint()..color = Colors.black);
+
+    _drawBarrier(x: 154, y: 417, width: 3, height: 18.3);
+    _drawBarrier(x: 166, y: 417, width: 3, height: 18.3);
+
+    _drawBarrier(x: 160, y: 412);
+    _drawBarrier(x: 160, y: 417);
+    _drawBarrier(x: 160, y: 421.8);
+
+    /////////////////////// {AIR} ///////////////////////
   }
 
   _draw() {

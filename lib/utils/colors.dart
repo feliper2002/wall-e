@@ -39,6 +39,17 @@ class AppColors {
 
   static const rectangleBrown = Color(0xff5B5148);
 
+  static const gradientRectanglePin3Colors = <Color>[
+    Color(0xff5B5148),
+    Color(0xffBBB1AF),
+    Color(0xff5B5148),
+  ];
+
+  static const gradientRectanglePin2Colors = <Color>[
+    Color(0xff5B5148),
+    Color(0xffBBB1AF),
+  ];
+
   /////// {Armor Chest}
 
   static const chestBaseGradient = <Color>[

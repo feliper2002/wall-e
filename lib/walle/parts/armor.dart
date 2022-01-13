@@ -97,5 +97,45 @@ class Armor {
     //// {Second - RIGHT}
     _drawRectangle(
         Offset(xConv(274, realWidth, size), yConv(449, realHeight, size)));
+
+    ////////////////// {Rectangle - PINS} //////////////////
+
+    /// [LEFT]
+    _drawArmorLayer(
+      Offset(xConv(127.6, realWidth, size), yConv(431, realHeight, size)),
+      begin: Alignment.centerLeft,
+      end: Alignment.centerRight,
+      colors: AppColors.gradientRectanglePin3Colors,
+      height: 73.6,
+      width: 2.47,
+    );
+    _drawArmorLayer(
+      Offset(xConv(131.73, realWidth, size), yConv(431, realHeight, size)),
+      begin: Alignment.centerLeft,
+      end: Alignment.centerRight,
+      colors: AppColors.gradientRectanglePin2Colors,
+      height: 73.6,
+      width: 6.31,
+    );
+
+    /// [RIGHT]
+    _drawArmorLayer(
+      Offset(xConv(243, realWidth, size), yConv(431, realHeight, size)),
+      begin: Alignment.centerLeft,
+      end: Alignment.centerRight,
+      colors: AppColors.gradientRectanglePin2Colors,
+      height: 73.6,
+      width: 6.31,
+    );
+    _drawArmorLayer(
+      Offset(xConv(246, realWidth, size), yConv(431, realHeight, size)),
+      begin: Alignment.centerLeft,
+      end: Alignment.centerRight,
+      colors: AppColors.gradientRectanglePin3Colors,
+      height: 73.6,
+      width: 2.47,
+    );
+
+    ////////////////// {Rectangle - PINS} //////////////////
   }
 }
