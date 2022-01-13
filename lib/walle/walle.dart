@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:walle_fteam/utils/colors.dart';
 import 'package:walle_fteam/walle/parts/body.dart';
-import 'package:walle_fteam/walle/parts/eyes.dart';
+import 'package:walle_fteam/walle/parts/head.dart';
 import 'package:walle_fteam/walle/parts/wheels.dart';
 
 class Walle extends StatelessWidget {
@@ -37,7 +37,7 @@ class WallePaint extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    Eyes(canvas, size, realHeight, realWidth);
+    Head(canvas, size, realHeight, realWidth);
     Wheels(canvas, size, realHeight, realWidth);
     Body(canvas, size, realHeight, realWidth);
   }
