@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:walle_fteam/walle/parts/eyes.dart';
+import 'package:walle_fteam/walle/parts/neck.dart';
 
 class Head {
   final Canvas canvas;
@@ -15,7 +16,17 @@ class Head {
     Eyes(canvas, size, realHeight, realWidth);
   }
 
+  _drawNeck() {
+    Neck(canvas, size, realHeight, realWidth);
+  }
+
   _draw() {
+    ////////////////////////////////// [EYES] //////////////////////////////////
     _drawEyes();
+    ////////////////////////////////// [EYES] //////////////////////////////////
+    ///
+    ////////////////////////////////// [NECK] //////////////////////////////////
+    _drawNeck();
+    ////////////////////////////////// [NECK] //////////////////////////////////
   }
 }
