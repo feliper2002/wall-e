@@ -93,6 +93,52 @@ class Name {
         Paint()..color = AppColors.bodyGradient[2]);
 
     ////////////////////// [A] //////////////////////
+    ///
+    ////////////////////// [L - 1] //////////////////////
+
+    final lPath = Path()
+          ..moveTo(
+              xConv(199.6, realWidth, size), yConv(555.7, realHeight, size))
+          ..lineTo(
+              xConv(199.6, realWidth, size), yConv(568.74, realHeight, size))
+          ..lineTo(
+              xConv(216.13, realWidth, size), yConv(568.74, realHeight, size))
+          ..lineTo(
+              xConv(216.13, realWidth, size), yConv(566.16, realHeight, size))
+          ..lineTo(
+              xConv(203.77, realWidth, size), yConv(566.16, realHeight, size))
+          ..lineTo(
+              xConv(203.77, realWidth, size), yConv(555.7, realHeight, size))
+        //
+        ;
+
+    canvas.drawPath(lPath, lettersPaint);
+
+    ////////////////////// [L - 1] //////////////////////
+
+    ////////////////////// [L - 2] //////////////////////
+
+    final l2Path = Path()
+          ..moveTo(
+              xConv(199.6, realWidth, size), yConv(555.7, realHeight, size))
+          ..lineTo(
+              xConv(221.5, realWidth, size), yConv(555.7, realHeight, size))
+          ..lineTo(
+              xConv(221.5, realWidth, size), yConv(568.8, realHeight, size))
+          ..lineTo(
+              xConv(238.15, realWidth, size), yConv(568.8, realHeight, size))
+          ..lineTo(
+              xConv(238.15, realWidth, size), yConv(566.2, realHeight, size))
+          ..lineTo(
+              xConv(225.8, realWidth, size), yConv(566.2, realHeight, size))
+          ..lineTo(
+              xConv(225.8, realWidth, size), yConv(555.8, realHeight, size))
+        //
+        ;
+
+    canvas.drawPath(l2Path, lettersPaint);
+
+    ////////////////////// [L - 2] //////////////////////
 
     ////////////////////// [DOT] //////////////////////
 
