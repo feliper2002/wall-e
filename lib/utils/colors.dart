@@ -39,6 +39,38 @@ class AppColors {
 
   static const rectangleBrown = Color(0xff5B5148);
 
+  /////// {Armor Chest}
+
+  static const chestBaseGradient = <Color>[
+    Color(0xffBBB1AF),
+    Color(0xff5B5148),
+  ];
+
+  static const chestRadialGradient = <Color>[
+    Color(0xffBBB1AF),
+    Color(0xffA69F99),
+  ];
+
+  static const chestRadialRED = <Color>[
+    Color(0xffA11B18),
+    Color(0xFF5E1914),
+  ];
+
+  static const chestRadialREDLIGHT = <Color>[
+    Color(0xffD39FAB),
+    Color(0x7EC46B7E),
+  ];
+
+  static const insideRectangleGrey = Color(0xff2E292D);
+
+  static const chestOvalYellow = <Color>[
+    Color(0xff867943),
+    Color(0xffFBE992),
+    Color(0xFFA19C56),
+  ];
+
+  static const chestYellow = Color(0xffFBE992);
+
   /////////////////////////////// [ARMS] ///////////////////////////////
 
   static const handsGrey = Color(0xffC4C4C4);
