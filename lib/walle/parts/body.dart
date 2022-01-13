@@ -5,6 +5,7 @@ import 'package:walle_fteam/walle/parts/armor.dart';
 import 'package:walle_fteam/walle/parts/chest.dart';
 
 import 'name.dart';
+import 'shoulders.dart';
 
 class Body {
   final Canvas canvas;
@@ -26,6 +27,10 @@ class Body {
 
   _drawChest() {
     Chest(canvas, size, realHeight, realWidth);
+  }
+
+  _drawShoulders() {
+    Shoulders(canvas, size, realHeight, realWidth);
   }
 
   _draw() {
@@ -120,5 +125,9 @@ class Body {
     /////////////////////////// [Chest] ///////////////////////////
     _drawChest();
     /////////////////////////// [Chest] ///////////////////////////
+
+    /////////////////////////// [Shoulders] ///////////////////////////
+    _drawShoulders();
+    /////////////////////////// [Shoulders] ///////////////////////////
   }
 }
