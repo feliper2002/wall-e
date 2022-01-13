@@ -149,5 +149,13 @@ class Name {
 
     canvas.drawPath(ePath, letterEPainting);
     ////////////////////// [E] //////////////////////
+
+    // final dimensoes = Offset(size.width * .25, size.height * .092);
+    // final centroRoda = Offset(size.width * .34, size.height * .96);
+
+    // final roda = Rect.fromCenter(
+    //     center: centroRoda, width: dimensoes.dx, height: dimensoes.dy);
+
+    // canvas.drawRect(roda, Paint()..color = Colors.red);
   }
 }

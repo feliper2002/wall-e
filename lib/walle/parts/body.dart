@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:walle_fteam/utils/colors.dart';
 import 'package:walle_fteam/walle/global_functions.dart';
 
+import 'name.dart';
+
 class Body {
   final Canvas canvas;
   final Size size;
@@ -10,6 +12,10 @@ class Body {
 
   Body(this.canvas, this.size, this.realHeight, this.realWidth) {
     _draw();
+  }
+
+  _drawName() {
+    Name(canvas, size, realHeight, realWidth);
   }
 
   _draw() {
@@ -92,5 +98,9 @@ class Body {
     canvas.drawPath(reinforcementPathRight, reinforcementPaint);
 
     /////////////////////////// [Reinforcement] ///////////////////////////
+
+    /////////////////////////// [N.A.M.E] ///////////////////////////
+    _drawName();
+    /////////////////////////// [N.A.M.E] ///////////////////////////
   }
 }

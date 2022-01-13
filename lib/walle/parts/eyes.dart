@@ -6,8 +6,10 @@ import '../global_functions.dart';
 class Eyes {
   final Canvas canvas;
   final Size size;
+  final double realHeight;
+  final double realWidth;
 
-  Eyes(this.canvas, this.size) {
+  Eyes(this.canvas, this.size, this.realHeight, this.realWidth) {
     _draw();
   }
 
@@ -20,21 +22,6 @@ class Eyes {
         //
         ;
 
-    Path eyeLeftPath = Path()
-          ..moveTo(size.width * .42, size.height * .326)
-          ..quadraticBezierTo(size.width * .354, size.height * .35,
-              size.width * .266, size.height * .376)
-          ..quadraticBezierTo(size.width * .2, size.height * .472,
-              size.width * .285, size.height * .481)
-          ..quadraticBezierTo(size.width * .328, size.height * .494,
-              size.width * .397, size.height * .4737)
-          ..quadraticBezierTo(size.width * .47, size.height * .418,
-              size.width * .424, size.height * .328)
-        //
-        ;
-
-    eyeLeftPath = eyeLeftPath.transform(rotatePath(eyeLeftPos, -30));
-
-    drawPathWithStroke(canvas, eyeLeftPath, eyeBasePaint);
+    // drawPathWithStroke(canvas, eyeLeftPath, eyeBasePaint);
   }
 }
