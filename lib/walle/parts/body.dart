@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:walle_fteam/utils/colors.dart';
 import 'package:walle_fteam/walle/global_functions.dart';
+import 'package:walle_fteam/walle/parts/armor.dart';
+import 'package:walle_fteam/walle/parts/chest.dart';
 
 import 'name.dart';
 
@@ -16,6 +18,14 @@ class Body {
 
   _drawName() {
     Name(canvas, size, realHeight, realWidth);
+  }
+
+  _drawArmor() {
+    Armor(canvas, size, realHeight, realWidth);
+  }
+
+  _drawChest() {
+    Chest(canvas, size, realHeight, realWidth);
   }
 
   _draw() {
@@ -102,5 +112,13 @@ class Body {
     /////////////////////////// [N.A.M.E] ///////////////////////////
     _drawName();
     /////////////////////////// [N.A.M.E] ///////////////////////////
+
+    /////////////////////////// [Armor] ///////////////////////////
+    _drawArmor();
+    /////////////////////////// [Armor] ///////////////////////////
+
+    /////////////////////////// [Chest] ///////////////////////////
+    _drawChest();
+    /////////////////////////// [Chest] ///////////////////////////
   }
 }

@@ -25,6 +25,20 @@ class AppColors {
     Color(0xff26272C),
   ];
 
+  ////////////// {AMOR LAYERS}
+
+  static const armorLayer1Gradient = <Color>[
+    Color(0xff5B5148),
+    Color(0xffBBB1AF),
+  ];
+
+  static const armorLayer2Gradient = <Color>[
+    Color(0xffABA19E),
+    Color(0xffBBB1AF),
+  ];
+
+  static const rectangleBrown = Color(0xff5B5148);
+
   /////////////////////////////// [ARMS] ///////////////////////////////
 
   static const handsGrey = Color(0xffC4C4C4);
