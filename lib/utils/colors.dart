@@ -94,6 +94,35 @@ class AppColors {
     Color(0xffC6B2AE),
   ];
 
+  /////////////////////////////// [NECK] ///////////////////////////////
+
+  static const neckBaseRectangleGradient = <Color>[
+    Color(0xff937D73),
+    Color(0xff43322D),
+    Color(0xff52403B),
+    Color(0xffB29790),
+  ];
+
+  static const neckRectangle16 = <Color>[
+    Color(0xffA17149),
+    Color(0xff692E26),
+    Color(0xffA96842),
+  ];
+
+  static const neckRectangle125 = <Color>[
+    Color(0xff3D292C),
+    Color(0xff8A4737),
+    Color(0xff774538),
+  ];
+
+  static const neckRectangle15 = <Color>[
+    Color(0xff552825),
+    Color(0xff74272D),
+    Color(0xff6B2F2D),
+  ];
+
+  /////////////////////////////// [NECK] ///////////////////////////////
+  ///
   /////////////////////////////// [ARMS] ///////////////////////////////
 
   static const handsGrey = Color(0xffC4C4C4);
