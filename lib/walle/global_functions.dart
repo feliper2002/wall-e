@@ -11,7 +11,7 @@ double yConv(double y, double realHeight, Size size) {
   return (realHeight * (y / size.height));
 }
 
-double rotateRadians(double degrees) {
+double _rotateRadians(double degrees) {
   final radians = degrees * (pi / 180);
   return radians;
 }
@@ -22,7 +22,7 @@ Float64List rotatePath(Offset position, double degrees) {
   var m = matrix
     ..clone()
     ..translate(position.dx, position.dy)
-    ..multiply(Matrix4.rotationZ(rotateRadians(degrees)))
+    ..multiply(Matrix4.rotationZ(_rotateRadians(degrees)))
     ..translate(-position.dx, -position.dy);
 
   return m.storage;
