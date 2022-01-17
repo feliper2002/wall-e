@@ -206,5 +206,48 @@ class Neck {
 
     ///////////////////////////////// [Neck rectangle 114] /////////////////////////////////
     ///
+    ///////////////////////////////// [Neck rectangle 195] /////////////////////////////////
+
+    final rectangle195 = Rect.fromCenter(
+      center: Offset(
+          xConv(184.9, realWidth, size), yConv(311.96, realHeight, size)),
+      width: xConv(32.23, realWidth, size),
+      height: yConv(45, realHeight, size),
+    );
+    final rectangle195Radius =
+        RRect.fromRectAndRadius(rectangle195, const Radius.circular(8));
+
+    final rectangle195Paint = Paint()
+          ..shader = const LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: AppColors.neckRectangle195,
+          ).createShader(rectangle195)
+        //
+        ;
+
+    final rectangle195Path = Path()..addRRect(rectangle195Radius);
+
+    drawPathWithStroke(canvas, rectangle195Path, rectangle195Paint);
+
+    ///////////////////////////////// [Neck rectangle 195] /////////////////////////////////
+    ///
+    ///////////////////////////////// [Neck rectangle 13] /////////////////////////////////
+
+    final rectangle13 = Rect.fromCenter(
+      center: Offset(
+          xConv(184.91, realWidth, size), yConv(294.96, realHeight, size)),
+      width: xConv(10.74, realWidth, size),
+      height: yConv(11.43, realHeight, size),
+    );
+
+    final rectangle13Paint = Paint()..color = AppColors.neckRectangle13;
+
+    final rectangle13Path = Path()..addRect(rectangle13);
+
+    drawPathWithStroke(canvas, rectangle13Path, rectangle13Paint);
+
+    ///////////////////////////////// [Neck rectangle 13] /////////////////////////////////
+    ///
   }
 }
