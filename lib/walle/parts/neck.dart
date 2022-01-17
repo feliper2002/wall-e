@@ -280,7 +280,7 @@ class Neck {
           ..lineTo(xConv(169, realWidth, size), yConv(273.83, realHeight, size))
           ..quadraticBezierTo(
               xConv(184.91, realWidth, size),
-              yConv(290.56, realHeight, size),
+              yConv(298.56, realHeight, size),
               xConv(197.64, realWidth, size),
               yConv(273.83, realHeight, size))
           ..lineTo(
