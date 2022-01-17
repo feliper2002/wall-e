@@ -249,5 +249,60 @@ class Neck {
 
     ///////////////////////////////// [Neck rectangle 13] /////////////////////////////////
     ///
+    ///////////////////////////////// [Neck rectangle 12] /////////////////////////////////
+
+    final rectangle12 = Rect.fromCenter(
+      center: Offset(
+          xConv(184.91, realWidth, size), yConv(283.96, realHeight, size)),
+      width: xConv(23.64, realWidth, size),
+      height: yConv(11.56, realHeight, size),
+    );
+
+    final rectangle12Paint = Paint()..color = AppColors.neckRectangle12;
+
+    final rectangle12Path = Path()..addRect(rectangle12);
+
+    drawPathWithStroke(canvas, rectangle12Path, rectangle12Paint);
+
+    ///////////////////////////////// [Neck rectangle 12] /////////////////////////////////
+    ///
+    ///////////////////////////////// [Neck rectangle 10] /////////////////////////////////
+
+    final rectangle10 = Rect.fromCenter(
+      center: Offset(
+          xConv(184.91, realWidth, size), yConv(273.96, realHeight, size)),
+      width: xConv(28.52, realWidth, size),
+      height: yConv(30.56, realHeight, size),
+    );
+
+    Path rectangle10Path = Path()
+          ..moveTo(xConv(169, realWidth, size), yConv(258.88, realHeight, size))
+          ..lineTo(xConv(169, realWidth, size), yConv(273.83, realHeight, size))
+          ..quadraticBezierTo(
+              xConv(184.91, realWidth, size),
+              yConv(290.56, realHeight, size),
+              xConv(197.64, realWidth, size),
+              yConv(273.83, realHeight, size))
+          ..lineTo(
+              xConv(197.64, realWidth, size), yConv(258.88, realHeight, size))
+        //
+        ;
+
+    final rectangle10Paint = Paint()
+          ..shader = const LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: AppColors.neckRectangle10,
+          ).createShader(rectangle10)
+        //
+        ;
+
+    rectangle10Path = rectangle10Path.transform(rotatePath(
+        Offset(xConv(184.91, realWidth, size), yConv(273.96, realHeight, size)),
+        -10));
+    drawPathWithStroke(canvas, rectangle10Path, rectangle10Paint);
+
+    ///////////////////////////////// [Neck rectangle 10] /////////////////////////////////
+    ///
   }
 }

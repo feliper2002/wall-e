@@ -142,6 +142,14 @@ class AppColors {
 
   static const neckRectangle13 = Color(0xff4C2E29);
 
+  static const neckRectangle12 = Color(0xff563E39);
+
+  static const neckRectangle10 = <Color>[
+    Color(0xff150801),
+    Color(0xff845A43),
+    Color(0xff3D100E),
+  ];
+
   /////////////////////////////// [NECK] ///////////////////////////////
   ///
   /////////////////////////////// [ARMS] ///////////////////////////////
