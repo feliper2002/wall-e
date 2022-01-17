@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:walle_fteam/utils/colors.dart';
 import 'package:walle_fteam/walle/global_functions.dart';
 import 'package:walle_fteam/walle/parts/armor.dart';
+import 'package:walle_fteam/walle/parts/arms.dart';
 import 'package:walle_fteam/walle/parts/chest.dart';
 
 import 'name.dart';
@@ -31,6 +32,10 @@ class Body {
 
   _drawShoulders() {
     Shoulders(canvas, size, realHeight, realWidth);
+  }
+
+  _drawArms() {
+    Arms(canvas, size, realHeight, realWidth);
   }
 
   _draw() {
@@ -129,5 +134,9 @@ class Body {
     /////////////////////////// [Shoulders] ///////////////////////////
     _drawShoulders();
     /////////////////////////// [Shoulders] ///////////////////////////
+
+    /////////////////////////// [Arms] ///////////////////////////
+    _drawArms();
+    /////////////////////////// [Arms] ///////////////////////////
   }
 }
