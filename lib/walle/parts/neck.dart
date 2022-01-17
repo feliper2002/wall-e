@@ -304,5 +304,125 @@ class Neck {
 
     ///////////////////////////////// [Neck rectangle 10] /////////////////////////////////
     ///
+    ///////////////////////////////// [Neck rectangle 141] /////////////////////////////////
+
+    final rectangle141 = Rect.fromCenter(
+      center:
+          Offset(xConv(181.92, realWidth, size), yConv(266, realHeight, size)),
+      width: xConv(18.21, realWidth, size),
+      height: yConv(14.3, realHeight, size),
+    );
+
+    Path rectangle141Path = Path()
+          ..moveTo(
+              xConv(172.3, realWidth, size), yConv(259.15, realHeight, size))
+          ..lineTo(
+              xConv(172.3, realWidth, size), yConv(264.62, realHeight, size))
+          ..quadraticBezierTo(
+              xConv(181.91, realWidth, size),
+              yConv(274, realHeight, size),
+              xConv(190.92, realWidth, size),
+              yConv(264.62, realHeight, size))
+          ..lineTo(
+              xConv(190.92, realWidth, size), yConv(259.15, realHeight, size))
+        //
+        ;
+
+    final rectangle141Paint = Paint()
+          ..shader = const LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: AppColors.neckRectangle141,
+          ).createShader(rectangle141)
+        //
+        ;
+
+    rectangle141Path =
+        rectangle141Path.transform(rotatePath(rectangle141.center, -10));
+
+    drawPathWithStroke(canvas, rectangle141Path, rectangle141Paint);
+
+    ///////////////////////////////// [Neck rectangle 141] /////////////////////////////////
+    ///
+    ///////////////////////////////// [Neck rectangle 8] /////////////////////////////////
+
+    final rectangle8 = Rect.fromCenter(
+      center: Offset(
+          xConv(178.92, realWidth, size), yConv(247.96, realHeight, size)),
+      width: xConv(16.75, realWidth, size),
+      height: yConv(19.57, realHeight, size),
+    );
+
+    Path rectangle8Path = Path()
+          ..moveTo(
+              xConv(170.37, realWidth, size), yConv(257.8, realHeight, size))
+          ..lineTo(
+              xConv(170.37, realWidth, size), yConv(246.8, realHeight, size))
+          ..quadraticBezierTo(
+              xConv(178.93, realWidth, size),
+              yConv(236.96, realHeight, size),
+              xConv(187.1, realWidth, size),
+              yConv(246.8, realHeight, size))
+          ..lineTo(
+              xConv(187.12, realWidth, size), yConv(257.8, realHeight, size))
+        //
+        ;
+
+    final rectangle8Paint = Paint()
+          ..shader = const LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: AppColors.neckRectangle141,
+          ).createShader(rectangle8)
+        //
+        ;
+
+    rectangle8Path =
+        rectangle8Path.transform(rotatePath(rectangle8.center, -10));
+
+    drawPathWithStroke(canvas, rectangle8Path, rectangle8Paint);
+
+    ///////////////////////////////// [Neck rectangle 8] /////////////////////////////////
+    ///
+    ///////////////////////////////// [Neck rectangle 9] /////////////////////////////////
+
+    final rectangle9 = Rect.fromCenter(
+      center: Offset(
+          xConv(181.92, realWidth, size), yConv(264.96, realHeight, size)),
+      width: xConv(16.75, realWidth, size),
+      height: yConv(14.55, realHeight, size),
+    );
+
+    Path rectangle9Path = Path()
+          ..moveTo(
+              xConv(173.3, realWidth, size), yConv(257.5, realHeight, size))
+          ..lineTo(
+              xConv(170.3, realWidth, size), yConv(263.42, realHeight, size))
+          ..quadraticBezierTo(
+              xConv(181.91, realWidth, size),
+              yConv(272.96, realHeight, size),
+              xConv(190.1, realWidth, size),
+              yConv(263.42, realHeight, size))
+          ..lineTo(
+              xConv(190.1, realWidth, size), yConv(257.5, realHeight, size))
+        //
+        ;
+
+    final rectangle9Paint = Paint()
+          ..shader = const LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: AppColors.neckRectangle141,
+          ).createShader(rectangle9)
+        //
+        ;
+
+    rectangle9Path =
+        rectangle9Path.transform(rotatePath(rectangle9.center, -10));
+
+    drawPathWithStroke(canvas, rectangle9Path, rectangle9Paint);
+
+    ///////////////////////////////// [Neck rectangle 9] /////////////////////////////////
+    ///
   }
 }
