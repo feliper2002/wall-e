@@ -12,74 +12,46 @@ class Shoulders {
     _draw();
   }
 
-  _drawShoulder(Path shoulder,
-      {double x = 0,
-      double y = 0,
-      AlignmentGeometry focal = Alignment.bottomLeft,
-      double radius = 4}) {
+  _drawShoulder(
+    double x,
+    double y, {
+    double height = 9.3,
+    double width = 63.25,
+    AlignmentGeometry focal = Alignment.bottomLeft,
+    double radius = 4,
+    Radius topLeft = const Radius.circular(0),
+    Radius topRight = const Radius.circular(5),
+    Radius bottomLeft = const Radius.circular(5),
+    Radius bottomRight = const Radius.circular(30),
+  }) {
+    final shoulder = Rect.fromCenter(
+        center: Offset(xConv(x, realWidth, size), yConv(y, realHeight, size)),
+        width: xConv(width, realWidth, size),
+        height: yConv(height, realHeight, size));
+
+    final shoulderRadius = RRect.fromRectAndCorners(shoulder,
+        topLeft: topLeft,
+        topRight: topRight,
+        bottomLeft: bottomLeft,
+        bottomRight: bottomRight);
+
     final shoulderPaint = Paint()
           ..shader = RadialGradient(
                   colors: AppColors.shouldersRadial,
                   radius: radius,
                   focal: focal)
-              .createShader(Rect.fromCenter(
-                  center: Offset(
-                      xConv(x, realWidth, size), yConv(y, realHeight, size)),
-                  width: xConv(63.25, realWidth, size),
-                  height: yConv(9.3, realHeight, size)))
+              .createShader(shoulder)
         //
         ;
 
-    drawPathWithStroke(canvas, shoulder, shoulderPaint, strokeWidth: 3);
+    Path shoulderPath = Path()..addRRect(shoulderRadius);
+    shoulderPath = shoulderPath.transform(rotatePath(shoulder.center, 180));
+
+    drawPathWithStroke(canvas, shoulderPath, shoulderPaint, strokeWidth: 3);
   }
 
   _draw() {
-    final leftShoulder = Path()
-          ..moveTo(xConv(135, realWidth, size), yConv(394, realHeight, size))
-          ..lineTo(xConv(135, realWidth, size), yConv(389, realHeight, size))
-          ..quadraticBezierTo(
-              xConv(135.4, realWidth, size),
-              yConv(386.38, realHeight, size),
-              xConv(130.36, realWidth, size),
-              yConv(384.6, realHeight, size))
-          ..lineTo(xConv(80, realWidth, size), yConv(384.6, realHeight, size))
-          ..quadraticBezierTo(
-              xConv(72.96, realWidth, size),
-              yConv(387, realHeight, size),
-              xConv(71.95, realWidth, size),
-              yConv(392.73, realHeight, size))
-          ..quadraticBezierTo(
-              xConv(72.96, realWidth, size),
-              yConv(393.7, realHeight, size),
-              xConv(73.2, realWidth, size),
-              yConv(393.88, realHeight, size))
-        //
-        ;
-
-    final rightShoulder = Path()
-          ..moveTo(xConv(238, realWidth, size), yConv(394, realHeight, size))
-          ..lineTo(xConv(238, realWidth, size), yConv(389, realHeight, size))
-          ..quadraticBezierTo(
-              xConv(238.97, realWidth, size),
-              yConv(386.38, realHeight, size),
-              xConv(242.9, realWidth, size),
-              yConv(384.6, realHeight, size))
-          ..lineTo(
-              xConv(293.9, realWidth, size), yConv(384.6, realHeight, size))
-          ..quadraticBezierTo(
-              xConv(300, realWidth, size),
-              yConv(387, realHeight, size),
-              xConv(301.46, realWidth, size),
-              yConv(392.73, realHeight, size))
-          ..quadraticBezierTo(
-              xConv(300.37, realWidth, size),
-              yConv(393.7, realHeight, size),
-              xConv(300, realWidth, size),
-              yConv(393.88, realHeight, size))
-        //
-        ;
-
-    _drawShoulder(leftShoulder, x: 100, y: 389);
+    _drawShoulder(101, 390);
 
     final middleRectangle = Rect.fromCenter(
         center: Offset(
@@ -98,6 +70,14 @@ class Shoulders {
 
     drawPathWithStroke(canvas, middleRectanglePath, midleRectanglePaint);
 
-    _drawShoulder(rightShoulder, x: 270, y: 389, focal: Alignment.bottomRight);
+    _drawShoulder(
+      271.5,
+      390,
+      focal: Alignment.bottomRight,
+      topLeft: const Radius.circular(5),
+      topRight: const Radius.circular(0),
+      bottomLeft: const Radius.circular(30),
+      bottomRight: const Radius.circular(5),
+    );
   }
 }

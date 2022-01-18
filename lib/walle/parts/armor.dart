@@ -13,7 +13,7 @@ class Armor {
   }
 
   _drawRectangle(Offset position,
-      {double width = 53.26,
+      {double width = 63.5,
       double height = 4,
       Color color = AppColors.rectangleBrown}) {
     final rectangle =
@@ -29,7 +29,7 @@ class Armor {
       AlignmentGeometry end = Alignment.bottomCenter,
       List<Color> colors = AppColors.armorLayer1Gradient,
       double height = 16.5,
-      double width = 53.26}) {
+      double width = 63.5}) {
     final armorRectLayer1 = Rect.fromCenter(
         center: position,
         width: xConv(width, realWidth, size),
@@ -60,14 +60,14 @@ class Armor {
     _drawArmorLayer(
         Offset(xConv(100, realWidth, size), yConv(432, realHeight, size)),
         colors: AppColors.armorLayer2Gradient,
-        width: 53.26,
+        width: 63.5,
         height: 35);
 
     //// {RIGHT - 2}
     _drawArmorLayer(
         Offset(xConv(274, realWidth, size), yConv(432, realHeight, size)),
         colors: AppColors.armorLayer2Gradient,
-        width: 53.26,
+        width: 63.5,
         height: 35);
 
     //// {LEFT - 3}

@@ -176,6 +176,13 @@ class AppColors {
     Color(0xff4C3527),
   ];
 
+////////////////////////////// {ARMS SUPPORT} //////////////////////////////
+
+  static const armsSupportBase1 = <Color>[
+    Color(0xff270F12),
+    Color(0xff856E64),
+  ];
+
   /////////////////////////////// [EYES] ///////////////////////////////
 
   static const eyeBase = Color(0xff97867B);
