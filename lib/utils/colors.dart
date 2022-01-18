@@ -183,6 +183,33 @@ class AppColors {
     Color(0xff856E64),
   ];
 
+  static const armsSupportBase2 = <Color>[
+    Color(0xff412D24),
+    Color(0xff68544B),
+  ];
+
+  static const armsSupportBase3 = Color(0xff361E1D);
+
+  static const armsSideOrange = <Color>[
+    Color(0xffD4985E),
+    Color(0xffC25C11),
+  ];
+
+  static const armsBottomBrown = <Color>[
+    Color(0xff441C1A),
+    Color(0xff613E2B),
+    Color(0xff4B2F24),
+  ];
+
+  static const armsBottomElipse = <Color>[
+    Color(0xff1A0003),
+    Color(0xff4C3527),
+  ];
+
+  static const armsTopElipse = Color(0xff614032);
+
+  static const armsTopHandSupport = Color(0xff614032);
+
   /////////////////////////////// [EYES] ///////////////////////////////
 
   static const eyeBase = Color(0xff97867B);
