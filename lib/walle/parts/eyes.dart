@@ -64,6 +64,88 @@ class Eyes {
         strokeWidth: strokeWidth, strokeColor: strokeColor);
   }
 
+  _drawEyeLight(double x, double y,
+      {double radius = 10, List<Color> colors = AppColors.eyeGlassShiny}) {
+    final light = Rect.fromCircle(
+        center: Offset(xConv(x, realWidth, size), yConv(y, realHeight, size)),
+        radius: radius);
+    final lightPaint = Paint()
+          ..shader = RadialGradient(colors: colors).createShader(light)
+        //
+        ;
+    canvas.drawCircle(
+        Offset(xConv(x, realWidth, size), yConv(y, realHeight, size)),
+        radius,
+        lightPaint);
+  }
+
+  _drawSmallBolt(double x, double y,
+      {double radius = 10,
+      double strokeWidth = 2,
+      List<Color> colors = AppColors.eyeSmallBoltRadial}) {
+    final bolt = Rect.fromCircle(
+        center: Offset(xConv(x, realWidth, size), yConv(y, realHeight, size)),
+        radius: radius);
+
+    final boltPaint = Paint()
+          ..shader = RadialGradient(colors: colors).createShader(bolt)
+        //
+        ;
+
+    canvas.drawCircle(
+        bolt.center,
+        radius,
+        Paint()
+          ..color = Colors.black
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = strokeWidth);
+    canvas.drawCircle(bolt.center, radius, boltPaint);
+  }
+
+  _drawBigBolt(
+    double x,
+    double y, {
+    double smallRadius = 10,
+    double bigRadius = 10,
+    double strokeWidth = 2,
+    List<Color> colorsSmall = AppColors.eyeSmallBoltRadial,
+    List<Color> colorsBig = AppColors.eyeSmallBoltRadial,
+  }) {
+    final smallBolt = Rect.fromCircle(
+        center: Offset(xConv(x, realWidth, size), yConv(y, realHeight, size)),
+        radius: smallRadius);
+    final bigBolt = Rect.fromCircle(
+        center: Offset(xConv(x, realWidth, size), yConv(y, realHeight, size)),
+        radius: bigRadius);
+
+    final boltPaintSmall = Paint()
+          ..shader = RadialGradient(colors: colorsSmall).createShader(smallBolt)
+        //
+        ;
+
+    final boltPaintBig = Paint()
+          ..shader = RadialGradient(colors: colorsBig).createShader(bigBolt)
+        //
+        ;
+
+    canvas.drawCircle(
+        smallBolt.center,
+        smallRadius,
+        Paint()
+          ..color = Colors.black
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = strokeWidth);
+    canvas.drawCircle(smallBolt.center, smallRadius, boltPaintSmall);
+    canvas.drawCircle(
+        bigBolt.center,
+        bigRadius,
+        Paint()
+          ..color = Colors.black
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = strokeWidth);
+    canvas.drawCircle(bigBolt.center, bigRadius, boltPaintBig);
+  }
+
   _draw() {
     final pupilsLeftCenter =
         Offset(xConv(139, realWidth, size), yConv(279, realHeight, size));
@@ -96,6 +178,17 @@ class Eyes {
 
     Pupils(canvas, pupilsCenter: pupilsLeftCenter);
 
+    _drawEyeLight(151, 270.5);
+
+    _drawSmallBolt(95, 278, radius: 3.75);
+    _drawSmallBolt(124, 322, radius: 2.5);
+
+    _drawBigBolt(160, 246,
+        smallRadius: 2,
+        bigRadius: 3.75,
+        colorsSmall: AppColors.eyeSmallBoltRadial,
+        colorsBig: AppColors.eyeBigBoltRadial);
+
     ////////////////////////////////// [Left eye] //////////////////////////////////
     ///
     ////////////////////////////////// [Right eye] //////////////////////////////////
@@ -105,6 +198,18 @@ class Eyes {
         width: 102.04, height: 77.24, colors: AppColors.eyeBaseRadial);
 
     Pupils(canvas, pupilsCenter: pupilsRightCenter);
+
+    _drawEyeLight(235, 270, radius: 6);
+    _drawEyeLight(240, 274, radius: 20);
+
+    _drawSmallBolt(264, 260, radius: 3.75);
+    _drawSmallBolt(248, 305, radius: 2.5);
+
+    _drawBigBolt(196, 240,
+        smallRadius: 2,
+        bigRadius: 3.75,
+        colorsSmall: AppColors.eyeSmallBoltRadial,
+        colorsBig: AppColors.eyeBigBoltRadial);
 
     ////////////////////////////////// [Right eye] //////////////////////////////////
     ///

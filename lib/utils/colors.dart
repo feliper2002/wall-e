@@ -222,10 +222,10 @@ class AppColors {
 
   static const pupilBase5 = Colors.black;
 
-  static final eyeGlassShiny = <Color>[
-    const Color(0xffE2B8CA),
-    const Color(0xff501830).withOpacity(.3),
-    const Color(0xff64203A).withOpacity(0),
+  static const eyeGlassShiny = <Color>[
+    Color(0xffE2B8CA),
+    Color(0x54501830),
+    Color(0x0064203A),
   ];
 
   /////////////////////////////// [WHEELS] ///////////////////////////////
