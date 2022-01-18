@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:walle_fteam/utils/colors.dart';
 import 'package:walle_fteam/walle/parts/pupils.dart';
