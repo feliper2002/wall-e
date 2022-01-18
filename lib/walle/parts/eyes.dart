@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:walle_fteam/utils/colors.dart';
+import 'package:walle_fteam/walle/parts/pupils.dart';
 
 import '../global_functions.dart';
 
@@ -13,48 +15,98 @@ class Eyes {
     _draw();
   }
 
+  _drawEye(
+    double x,
+    double y, {
+    double height = 81.7,
+    double width = 107.4,
+    Color color = AppColors.eyeBase,
+    List<Color>? colors,
+    Radius topLeft = const Radius.circular(260),
+    Radius topRight = const Radius.circular(520),
+    Radius bottomLeft = const Radius.circular(320),
+    Radius bottomRight = const Radius.circular(47),
+    double rotation = -170,
+    double strokeWidth = 2,
+    Color strokeColor = Colors.black,
+  }) {
+    final eye = Rect.fromCenter(
+      center: Offset(xConv(x, realWidth, size), yConv(y, realHeight, size)),
+      width: xConv(width, realWidth, size),
+      height: yConv(height, realHeight, size),
+    );
+    final eyeRadius = RRect.fromRectAndCorners(
+      eye,
+      topLeft: topLeft,
+      topRight: topRight,
+      bottomLeft: bottomLeft,
+      bottomRight: bottomRight,
+    );
+    Path eyeRightPath = Path()..addRRect(eyeRadius);
+
+    late Paint eyePaint;
+
+    if (colors != null) {
+      eyePaint = Paint()
+            ..color = color
+            ..shader = RadialGradient(colors: colors).createShader(eye)
+          //
+          ;
+    } else {
+      eyePaint = Paint()..color = color
+          //
+          ;
+    }
+
+    eyeRightPath = eyeRightPath.transform(rotatePath(eye.center, rotation));
+
+    drawPathWithStroke(canvas, eyeRightPath, eyePaint,
+        strokeWidth: strokeWidth, strokeColor: strokeColor);
+  }
+
   _draw() {
-    final eyeLeft = Rect.fromCenter(
-      center: Offset(
-          xConv(132.9, realWidth, size), yConv(274.95, realHeight, size)),
-      width: xConv(107.4, realWidth, size),
-      height: yConv(81.7, realHeight, size),
+    final pupilsLeftCenter =
+        Offset(xConv(139, realWidth, size), yConv(279, realHeight, size));
+    final pupilsRightCenter =
+        Offset(xConv(223, realWidth, size), yConv(270, realHeight, size));
+
+    ////////////////////////////////// [Left eye] //////////////////////////////////
+    _drawEye(
+      132.9,
+      288,
+      topLeft: const Radius.circular(320),
+      topRight: const Radius.circular(47),
+      bottomLeft: const Radius.circular(260),
+      bottomRight: const Radius.circular(520),
+      color: AppColors.eyeBase,
+      rotation: -20,
+    );
+    _drawEye(
+      132.9,
+      288,
+      width: 102.04,
+      height: 77.24,
+      topLeft: const Radius.circular(320),
+      topRight: const Radius.circular(47),
+      bottomLeft: const Radius.circular(260),
+      bottomRight: const Radius.circular(520),
+      colors: AppColors.eyeBaseRadial,
+      rotation: -20,
     );
 
-    final eyeBasePaint = Paint()
-          ..color = AppColors.eyeBase
-          ..style = PaintingStyle.fill
-        //
-        ;
+    Pupils(canvas, pupilsCenter: pupilsLeftCenter);
 
-    Path eyeLeftPath = Path()
-          ..moveTo(
-              xConv(179.3, realWidth, size), yConv(235.53, realHeight, size))
-          ..lineTo(
-              xConv(122.46, realWidth, size), yConv(235.53, realHeight, size))
-          ..quadraticBezierTo(
-            xConv(68.9, realWidth, size),
-            yConv(291.96, realHeight, size),
-            xConv(122.46, realWidth, size),
-            yConv(316.85, realHeight, size),
-          )
-          ..quadraticBezierTo(
-            xConv(171.9, realWidth, size),
-            yConv(294.96, realHeight, size),
-            xConv(185.98, realWidth, size),
-            yConv(242.34, realHeight, size),
-          )
-          ..quadraticBezierTo(
-            xConv(185.3, realWidth, size),
-            yConv(237.96, realHeight, size),
-            xConv(179.47, realWidth, size),
-            yConv(235.54, realHeight, size),
-          )
-        //
-        ;
+    ////////////////////////////////// [Left eye] //////////////////////////////////
+    ///
+    ////////////////////////////////// [Right eye] //////////////////////////////////
+    _drawEye(231.9, 274.95, color: AppColors.eyeBase);
 
-    eyeLeftPath = eyeLeftPath.transform(rotatePath(eyeLeft.center, -15));
+    _drawEye(231.9, 274.95,
+        width: 102.04, height: 77.24, colors: AppColors.eyeBaseRadial);
 
-    // drawPathWithStroke(canvas, eyeLeftPath, eyeBasePaint);
+    Pupils(canvas, pupilsCenter: pupilsRightCenter);
+
+    ////////////////////////////////// [Right eye] //////////////////////////////////
+    ///
   }
 }

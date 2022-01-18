@@ -39,3 +39,19 @@ drawPathWithStroke(Canvas canvas, Path path, Paint basePaint,
   canvas.drawPath(path, drawSTROKE);
   canvas.drawPath(path, basePaint);
 }
+
+drawCircleWithStroke(Canvas canvas, Rect rect, Paint paint,
+    {Offset center = Offset.zero,
+    double strokeWidth = 2,
+    Color strokeColor = Colors.black,
+    double radius = 10}) {
+  final drawSTROKE = Paint()
+        ..color = strokeColor
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = strokeWidth
+      //
+      ;
+
+  canvas.drawCircle(center, radius, drawSTROKE);
+  canvas.drawCircle(center, radius, paint);
+}

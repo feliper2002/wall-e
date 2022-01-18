@@ -215,6 +215,11 @@ class AppColors {
     Color(0xff352F2C),
   ];
 
+  static const pupilBase5Radial = <Color>[
+    Color(0xff43413E),
+    Color(0xff534F4B),
+  ];
+
   static const pupilBase5 = Colors.black;
 
   static final eyeGlassShiny = <Color>[
