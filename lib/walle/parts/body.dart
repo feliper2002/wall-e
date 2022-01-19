@@ -5,6 +5,7 @@ import 'package:walle_fteam/walle/parts/armor.dart';
 import 'package:walle_fteam/walle/parts/arms.dart';
 import 'package:walle_fteam/walle/parts/chest.dart';
 
+import 'hands.dart';
 import 'name.dart';
 import 'shoulders.dart';
 
@@ -36,6 +37,10 @@ class Body {
 
   _drawArms() {
     Arms(canvas, size, realHeight, realWidth);
+  }
+
+  _drawHands() {
+    Hands(canvas, size, realHeight, realWidth);
   }
 
   _draw() {
@@ -138,5 +143,9 @@ class Body {
     /////////////////////////// [Arms] ///////////////////////////
     _drawArms();
     /////////////////////////// [Arms] ///////////////////////////
+
+    /////////////////////////// [Hands] ///////////////////////////
+    _drawHands();
+    /////////////////////////// [Hands] ///////////////////////////
   }
 }
