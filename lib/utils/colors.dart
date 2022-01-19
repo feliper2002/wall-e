@@ -210,6 +210,11 @@ class AppColors {
 
   static const armsTopHandSupport = Color(0xff614032);
 
+  static const handsSmallElipse = <Color>[
+    Color(0xffCC9662),
+    Color(0xff9E523B),
+  ];
+
   /////////////////////////////// [EYES] ///////////////////////////////
 
   static const eyeBase = Color(0xff97867B);
