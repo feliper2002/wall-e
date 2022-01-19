@@ -276,4 +276,8 @@ class AppColors {
   ];
 
   static const middleBigWheelsLayer = Color(0xff74605D);
+
+  /////////////////////////////// [HANDS] ///////////////////////////////
+
+  static const handColor = Color(0xffC4C4C4);
 }
