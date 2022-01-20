@@ -14,6 +14,37 @@ class Hands {
 
   final handsPaint = Paint()..color = AppColors.handColor;
 
+  _drawFinger(
+    double x,
+    double y, {
+    double height = 33,
+    double width = 39,
+    double rotationDegreess = 30,
+    Radius topLeft = const Radius.circular(0),
+    Radius topRight = const Radius.circular(53),
+    Radius bottomLeft = const Radius.circular(0),
+    Radius bottomRight = const Radius.circular(53),
+  }) {
+    final finger = Rect.fromCenter(
+      center: Offset(xConv(x, realWidth, size), yConv(y, realHeight, size)),
+      width: xConv(width, realWidth, size),
+      height: yConv(height, realHeight, size),
+    );
+
+    final fingerRadius = RRect.fromRectAndCorners(finger,
+        topLeft: topLeft,
+        topRight: topRight,
+        bottomLeft: bottomLeft,
+        bottomRight: bottomRight);
+
+    Path fingerPath = Path()..addRRect(fingerRadius);
+
+    fingerPath =
+        fingerPath.transform(rotatePath(finger.center, rotationDegreess));
+
+    drawPathWithStroke(canvas, fingerPath, handsPaint);
+  }
+
   _leftHand() {
     ////////////////////////////////// [Vector 16] //////////////////////////////////
 
@@ -135,6 +166,80 @@ class Hands {
     drawPathWithStroke(canvas, vector18, handsPaint);
 
     ////////////////////////////////// [Vector 18] //////////////////////////////////
+    ///
+    ////////////////////////////////// [Vector 20] //////////////////////////////////
+
+    final vector20 = Path()
+          ..moveTo(
+              xConv(87.9, realWidth, size), yConv(429.93, realHeight, size))
+          ..lineTo(
+              xConv(132.75, realWidth, size), yConv(444.96, realHeight, size))
+          ..lineTo(
+              xConv(124.45, realWidth, size), yConv(458.2, realHeight, size))
+          ..lineTo(xConv(125.83, realWidth, size), yConv(460, realHeight, size))
+          ..lineTo(
+              xConv(117.67, realWidth, size), yConv(475.06, realHeight, size))
+          ..lineTo(xConv(70, realWidth, size), yConv(461.47, realHeight, size))
+          ..close()
+        //
+        ;
+
+    drawPathWithStroke(canvas, vector20, handsPaint);
+
+    ////////////////////////////////// [Vector 20] //////////////////////////////////
+    ///
+    ////////////////////////////////// [Rounded finger] //////////////////////////////////
+
+    _drawFinger(146.8, 473,
+        topRight: Radius.circular(xConv(53, realWidth, size)),
+        bottomRight: Radius.circular(xConv(53, realWidth, size)));
+
+    ////////////////////////////////// [Rounded finger] //////////////////////////////////
+    ///
+    ////////////////////////////////// [Vector 12] //////////////////////////////////
+
+    final vector12 = Path()
+          ..moveTo(
+              xConv(131.84, realWidth, size), yConv(444.55, realHeight, size))
+          ..lineTo(
+              xConv(124.45, realWidth, size), yConv(458.2, realHeight, size))
+          ..lineTo(
+              xConv(125.83, realWidth, size), yConv(459.9, realHeight, size))
+          ..lineTo(
+              xConv(116.83, realWidth, size), yConv(474.59, realHeight, size))
+          ..lineTo(
+              xConv(120.12, realWidth, size), yConv(478.43, realHeight, size))
+          ..lineTo(
+              xConv(138.14, realWidth, size), yConv(448.41, realHeight, size))
+          ..close()
+        //
+        ;
+
+    drawPathWithStroke(canvas, vector12, handsPaint);
+
+    ////////////////////////////////// [Vector 12] //////////////////////////////////
+    ///
+    ////////////////////////////////// [Vector 13] //////////////////////////////////
+
+    final vector13 = Path()
+          ..moveTo(
+              xConv(69.87, realWidth, size), yConv(460.42, realHeight, size))
+          ..lineTo(
+              xConv(74.1, realWidth, size), yConv(470.82, realHeight, size))
+          ..lineTo(
+              xConv(95.5, realWidth, size), yConv(477.43, realHeight, size))
+          ..lineTo(
+              xConv(103.66, realWidth, size), yConv(476.1, realHeight, size))
+          ..lineTo(
+              xConv(103.66, realWidth, size), yConv(476.1, realHeight, size))
+          ..close()
+        //
+        ;
+
+    drawPathWithStroke(canvas, vector13, handsPaint);
+
+    ////////////////////////////////// [Vector 13] //////////////////////////////////
+    ///
   }
 
   _draw() {
