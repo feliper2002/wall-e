@@ -231,7 +231,12 @@ class Hands {
           ..lineTo(
               xConv(103.66, realWidth, size), yConv(476.1, realHeight, size))
           ..lineTo(
-              xConv(103.66, realWidth, size), yConv(476.1, realHeight, size))
+              xConv(121.87, realWidth, size), yConv(480.6, realHeight, size))
+          ..lineTo(
+              xConv(123.66, realWidth, size), yConv(479.1, realHeight, size))
+          ..lineTo(
+              xConv(120.4, realWidth, size), yConv(477.2, realHeight, size))
+          ..lineTo(xConv(117.73, realWidth, size), yConv(474, realHeight, size))
           ..close()
         //
         ;
