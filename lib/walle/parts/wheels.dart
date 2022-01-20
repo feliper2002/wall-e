@@ -52,22 +52,10 @@ class Wheels {
     }
   }
 
-  void _draw() {
-    ////////////// {TOP BIG PART FOOT} //////////////
-
+  _drawWheel({Offset center = Offset.zero}) {
     final bigWheelDimensions = Offset(size.width * .2485, size.height * .0878);
-
-    final leftBigWheelCenterPos = Offset(size.width * .338, size.height * .946);
-    final rightBigWheelCenterPos =
-        Offset(size.width * .658, size.height * .946);
-
-    final leftBigWheelRect = Rect.fromCenter(
-        center: leftBigWheelCenterPos,
-        width: bigWheelDimensions.dx,
-        height: bigWheelDimensions.dy);
-
-    final rightBigWheelRect = Rect.fromCenter(
-        center: rightBigWheelCenterPos,
+    final bigWheelRect = Rect.fromCenter(
+        center: center,
         width: bigWheelDimensions.dx,
         height: bigWheelDimensions.dy);
 
@@ -76,17 +64,23 @@ class Wheels {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: AppColors.bigWheelGradint,
-          ).createShader(leftBigWheelRect)
+          ).createShader(bigWheelRect)
         //
         ;
+    final wheelPath = Path()..addRect(bigWheelRect);
 
-    final leftWheelPath = Path()..addRect(leftBigWheelRect);
-    final rightWheelPath = Path()..addRect(rightBigWheelRect);
+    drawPathWithStroke(canvas, wheelPath, bigWheelPaint,
+        strokeColor: AppColors.middleBigWheelsLayer, strokeWidth: 3);
+  }
 
-    drawPathWithStroke(canvas, leftWheelPath, bigWheelPaint,
-        strokeColor: AppColors.middleBigWheelsLayer, strokeWidth: 3);
-    drawPathWithStroke(canvas, rightWheelPath, bigWheelPaint,
-        strokeColor: AppColors.middleBigWheelsLayer, strokeWidth: 3);
+  void _draw() {
+    ////////////// {TOP BIG PART FOOT} //////////////
+
+    /// [LEFT Wheel]
+    _drawWheel(center: Offset(size.width * .338, size.height * .946));
+
+    /// [RIGHT Wheel]
+    _drawWheel(center: Offset(size.width * .658, size.height * .946));
 
     ////////////// {TOP BIG PART FOOT} //////////////
 
