@@ -92,20 +92,17 @@ class Hands {
     ///
     ////////////////////////////////// [Vector 14] //////////////////////////////////
 
-    final vector14 = Path()
-          ..moveTo(
-              xConv(156.16, realWidth, size), yConv(412.78, realHeight, size))
-          ..lineTo(
-              xConv(140.5, realWidth, size), yConv(438.95, realHeight, size))
-          ..lineTo(
-              xConv(174.55, realWidth, size), yConv(464.62, realHeight, size))
-          ..lineTo(
-              xConv(189.84, realWidth, size), yConv(438.73, realHeight, size))
-          ..close()
-        //
-        ;
-
-    drawPathWithStroke(canvas, vector14, handsPaint);
+    _drawFinger(
+      164.81,
+      438,
+      topLeft: const Radius.circular(0),
+      topRight: const Radius.circular(0),
+      bottomLeft: const Radius.circular(0),
+      bottomRight: const Radius.circular(0),
+      rotationDegreess: 34,
+      height: 30,
+      width: 42.5,
+    );
 
     ////////////////////////////////// [Vector 14] //////////////////////////////////
     ///
@@ -298,20 +295,17 @@ class Hands {
     ///
     ////////////////////////////////// [Vector 14] //////////////////////////////////
 
-    final vector14 = Path()
-          ..moveTo(
-              xConv(183.14, realWidth, size), yConv(437.7, realHeight, size))
-          ..lineTo(
-              xConv(198.42, realWidth, size), yConv(463.6, realHeight, size))
-          ..lineTo(
-              xConv(232.54, realWidth, size), yConv(437.94, realHeight, size))
-          ..lineTo(
-              xConv(216.86, realWidth, size), yConv(411.76, realHeight, size))
-          ..close()
-        //
-        ;
-
-    drawPathWithStroke(canvas, vector14, handsPaint);
+    _drawFinger(
+      207.81,
+      438,
+      topLeft: const Radius.circular(0),
+      topRight: const Radius.circular(0),
+      bottomLeft: const Radius.circular(0),
+      bottomRight: const Radius.circular(0),
+      rotationDegreess: -30,
+      height: 33,
+      width: 43,
+    );
 
     ////////////////////////////////// [Vector 14] //////////////////////////////////
     ///
