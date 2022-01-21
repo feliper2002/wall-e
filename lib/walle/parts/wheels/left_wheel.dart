@@ -62,78 +62,58 @@ class LeftWheel {
 
     /// middleType[columnIndex + 1][rowIndex + 1]
 
-    double soma = 0;
-    for (var i = 0; i < 3;) {
-      Path middleType11 = Path()
-            ..moveTo(size.width * .224, (size.height * .9175) + soma)
-            ..lineTo(size.width * .224, (size.height * .9235) + soma)
-            ..lineTo(size.width * .2453, (size.height * .9235) + soma)
-            ..lineTo(size.width * .264, (size.height * .92) + soma)
-            ..lineTo(size.width * .264, (size.height * .913) + soma)
+    double soma1 = 0;
+    for (var i = 0; i < 3; i++) {
+      Path middleType1 = Path()
+            ..moveTo(size.width * .224, size.height * (.9175 + soma1))
+            ..lineTo(size.width * .224, size.height * (.9235 + soma1))
+            ..lineTo(size.width * .2453, size.height * (.9235 + soma1))
+            ..lineTo(size.width * .264, size.height * (.92 + soma1))
+            ..lineTo(size.width * .264, size.height * (.913 + soma1))
           //
           ;
-      drawPathWithStroke(canvas, middleType11, middlePartsPaint);
-      soma += .025;
-      i++;
+      drawPathWithStroke(canvas, middleType1, middlePartsPaint);
+      soma1 += .025;
     }
-    final middleType12 = Path()
-          ..moveTo(size.width * .224, size.height * .943)
-          ..lineTo(size.width * .224, size.height * .95)
-          ..lineTo(size.width * .2453, size.height * .95)
-          ..lineTo(size.width * .264, size.height * .946)
-          ..lineTo(size.width * .264, size.height * .93853)
-        //
-        ;
-    final middleType13 = Path()
-          ..moveTo(size.width * .224, size.height * .9685)
-          ..lineTo(size.width * .224, size.height * .974)
-          ..lineTo(size.width * .2453, size.height * .974)
-          ..lineTo(size.width * .264, size.height * .9715)
-          ..lineTo(size.width * .264, size.height * .964)
-        //
-        ;
-    final middleType21 = Path()
-          ..moveTo(size.width * .28, size.height * .91)
-          ..lineTo(size.width * .28, size.height * .92)
-          ..lineTo(size.width * .2928, size.height * .916)
-          ..lineTo(size.width * .3177, size.height * .9244)
-          ..lineTo(size.width * .3349, size.height * .9244)
-          ..lineTo(size.width * .3349, size.height * .91925)
-          ..lineTo(size.width * .296, size.height * .908)
-        //
-        ;
-    final middleType22 = Path()
-          ..moveTo(size.width * .28, size.height * .937)
-          ..lineTo(size.width * .28, size.height * .9445)
-          ..lineTo(size.width * .2928, size.height * .9424)
-          ..lineTo(size.width * .3177, size.height * .95)
-          ..lineTo(size.width * .3349, size.height * .95)
-          ..lineTo(size.width * .3349, size.height * .945)
-          ..lineTo(size.width * .296, size.height * .934)
-        //
-        ;
-    final middleType23 = Path()
-          ..moveTo(size.width * .28, size.height * .9625)
-          ..lineTo(size.width * .28, size.height * .97)
-          ..lineTo(size.width * .2928, size.height * .968)
-          ..lineTo(size.width * .3177, size.height * .976)
-          ..lineTo(size.width * .3349, size.height * .976)
-          ..lineTo(size.width * .3349, size.height * .97)
-          ..lineTo(size.width * .296, size.height * .96)
-        //
-        ;
-    final middleType31 = Path()
-          ..moveTo(xConv(130, realWidth, size), yConv(613, realHeight, size))
-          ..lineTo(xConv(130, realWidth, size), yConv(616.58, realHeight, size))
-          ..lineTo(xConv(136, realWidth, size), yConv(616.58, realHeight, size))
-          ..lineTo(
-              xConv(145.3, realWidth, size), yConv(611.45, realHeight, size))
-          ..lineTo(xConv(150, realWidth, size), yConv(612.36, realHeight, size))
-          ..lineTo(xConv(150, realWidth, size), yConv(607.9, realHeight, size))
-          ..lineTo(
-              xConv(144.34, realWidth, size), yConv(606.18, realHeight, size))
-        //
-        ;
+
+    double soma2 = 0;
+    for (var i = 0; i < 3; i++) {
+      final middleType2 = Path()
+            ..moveTo(size.width * .28, size.height * (.91 + soma2))
+            ..lineTo(size.width * .28, size.height * (.92 + soma2))
+            ..lineTo(size.width * .2928, size.height * (.916 + soma2))
+            ..lineTo(size.width * .3177, size.height * (.9244 + soma2))
+            ..lineTo(size.width * .3349, size.height * (.9244 + soma2))
+            ..lineTo(size.width * .3349, size.height * (.91925 + soma2))
+            ..lineTo(size.width * .296, size.height * (.908 + soma2))
+          //
+          ;
+      drawPathWithStroke(canvas, middleType2, middlePartsPaint);
+      soma2 += .025;
+    }
+
+    double soma3 = 0;
+    for (var i = 0; i < 3; i++) {
+      final middleType3 = Path()
+            ..moveTo(xConv(130, realWidth, size), yConv(613, realHeight, size))
+            ..lineTo(
+                xConv(130, realWidth, size), yConv(616.58, realHeight, size))
+            ..lineTo(
+                xConv(136, realWidth, size), yConv(616.58, realHeight, size))
+            ..lineTo(
+                xConv(145.3, realWidth, size), yConv(611.45, realHeight, size))
+            ..lineTo(
+                xConv(150, realWidth, size), yConv(612.36, realHeight, size))
+            ..lineTo(
+                xConv(150, realWidth, size), yConv(607.9, realHeight, size))
+            ..lineTo(
+                xConv(144.34, realWidth, size), yConv(606.18, realHeight, size))
+          //
+          ;
+      drawPathWithStroke(canvas, middleType3, middlePartsPaint);
+      soma3 += .025;
+    }
+
     final middleType32 = Path()
           ..moveTo(xConv(130, realWidth, size), yConv(630, realHeight, size))
           ..lineTo(xConv(130, realWidth, size), yConv(633.75, realHeight, size))
