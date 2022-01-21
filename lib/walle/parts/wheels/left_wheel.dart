@@ -95,47 +95,25 @@ class LeftWheel {
     double soma3 = 0;
     for (var i = 0; i < 3; i++) {
       final middleType3 = Path()
-            ..moveTo(xConv(130, realWidth, size), yConv(613, realHeight, size))
-            ..lineTo(
-                xConv(130, realWidth, size), yConv(616.58, realHeight, size))
-            ..lineTo(
-                xConv(136, realWidth, size), yConv(616.58, realHeight, size))
-            ..lineTo(
-                xConv(145.3, realWidth, size), yConv(611.45, realHeight, size))
-            ..lineTo(
-                xConv(150, realWidth, size), yConv(612.36, realHeight, size))
-            ..lineTo(
-                xConv(150, realWidth, size), yConv(607.9, realHeight, size))
-            ..lineTo(
-                xConv(144.34, realWidth, size), yConv(606.18, realHeight, size))
+            ..moveTo(xConv(130, realWidth, size),
+                yConv(613, realHeight, size, soma: soma3))
+            ..lineTo(xConv(130, realWidth, size),
+                yConv(616.58, realHeight, size, soma: soma3))
+            ..lineTo(xConv(136, realWidth, size),
+                yConv(616.58, realHeight, size, soma: soma3))
+            ..lineTo(xConv(145.3, realWidth, size),
+                yConv(611.45, realHeight, size, soma: soma3))
+            ..lineTo(xConv(150, realWidth, size),
+                yConv(612.36, realHeight, size, soma: soma3))
+            ..lineTo(xConv(150, realWidth, size),
+                yConv(607.9, realHeight, size, soma: soma3))
+            ..lineTo(xConv(144.34, realWidth, size),
+                yConv(606.18, realHeight, size, soma: soma3))
           //
           ;
       drawPathWithStroke(canvas, middleType3, middlePartsPaint);
-      soma3 += .025;
+      soma3 += .024;
     }
-
-    final middleType32 = Path()
-          ..moveTo(xConv(130, realWidth, size), yConv(630, realHeight, size))
-          ..lineTo(xConv(130, realWidth, size), yConv(633.75, realHeight, size))
-          ..lineTo(xConv(136, realWidth, size), yConv(633.75, realHeight, size))
-          ..lineTo(
-              xConv(145.3, realWidth, size), yConv(628.64, realHeight, size))
-          ..lineTo(xConv(150, realWidth, size), yConv(629.57, realHeight, size))
-          ..lineTo(xConv(150, realWidth, size), yConv(625, realHeight, size))
-          ..lineTo(
-              xConv(144.34, realWidth, size), yConv(623.3, realHeight, size))
-        //
-        ;
-
-    // drawPathWithStroke(canvas, middleType12, middlePartsPaint);
-    // drawPathWithStroke(canvas, middleType13, middlePartsPaint);
-
-    // drawPathWithStroke(canvas, middleType21, middlePartsPaint);
-    // drawPathWithStroke(canvas, middleType22, middlePartsPaint);
-    // drawPathWithStroke(canvas, middleType23, middlePartsPaint);
-
-    // drawPathWithStroke(canvas, middleType31, middlePartsPaint);
-    // drawPathWithStroke(canvas, middleType32, middlePartsPaint);
 
     ////////////// {[Rectangles - LEFT]} //////////////
 

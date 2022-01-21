@@ -3,12 +3,12 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 
-double xConv(double x, double realWidth, Size size) {
-  return (realWidth * (x / size.width));
+double xConv(double x, double realWidth, Size size, {double soma = 0}) {
+  return (realWidth * ((x / size.width) + soma));
 }
 
-double yConv(double y, double realHeight, Size size) {
-  return (realHeight * (y / size.height));
+double yConv(double y, double realHeight, Size size, {double soma = 0}) {
+  return (realHeight * ((y / size.height) + soma));
 }
 
 double _rotateRadians(double degrees) {
