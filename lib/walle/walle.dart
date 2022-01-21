@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:walle_fteam/utils/colors.dart';
 import 'package:walle_fteam/walle/parts/body.dart';
 import 'package:walle_fteam/walle/parts/head.dart';
-import 'package:walle_fteam/walle/parts/wheels.dart';
+import 'package:walle_fteam/walle/parts/wheels/wheels.dart';
 
 class Walle extends StatelessWidget {
   final double height;

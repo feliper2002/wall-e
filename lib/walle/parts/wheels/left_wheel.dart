@@ -1,55 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:walle_fteam/utils/colors.dart';
 
-import '../global_functions.dart';
+import '../../global_functions.dart';
 
-class Wheels {
+class LeftWheel {
   final Canvas canvas;
   final Size size;
   final double realHeight;
   final double realWidth;
 
-  Wheels(this.canvas, this.size, this.realHeight, this.realWidth) {
+  LeftWheel(this.canvas, this.size, this.realHeight, this.realWidth) {
     _draw();
-  }
-
-  _drawReactangle(Offset center, Paint paint, {bool small = true}) {
-    Rect rectangle;
-    if (small) {
-      final smallRectangleDimensions =
-          Offset(size.width * .245, size.height * .0015);
-      rectangle = Rect.fromCenter(
-          center: center,
-          width: smallRectangleDimensions.dx,
-          height: smallRectangleDimensions.dy);
-    } else {
-      final bigRectangleDimensions =
-          Offset(size.width * .245, size.height * .0026);
-      rectangle = Rect.fromCenter(
-          center: center,
-          width: bigRectangleDimensions.dx,
-          height: bigRectangleDimensions.dy);
-    }
-    canvas.drawRect(rectangle, paint);
-  }
-
-  _drawBottomWheel(Offset position, {bool small = true}) {
-    final wheelsBottomPaint = Paint()..color = Colors.black;
-    final wheelBottomHeight = size.height * .0032;
-
-    if (small) {
-      final smallWheelRect = Rect.fromCenter(
-          center: position,
-          width: size.width * .0336,
-          height: wheelBottomHeight);
-      canvas.drawRect(smallWheelRect, wheelsBottomPaint);
-    } else {
-      final bigWheelRect = Rect.fromCenter(
-          center: position,
-          width: size.width * .0487,
-          height: wheelBottomHeight);
-      canvas.drawRect(bigWheelRect, wheelsBottomPaint);
-    }
   }
 
   _drawWheel({Offset center = Offset.zero}) {
@@ -73,31 +34,48 @@ class Wheels {
         strokeColor: AppColors.middleBigWheelsLayer, strokeWidth: 3);
   }
 
-  void _draw() {
-    ////////////// {TOP BIG PART FOOT} //////////////
+  _drawReactangle(Offset center, Paint paint, {bool small = true}) {
+    Rect rectangle;
+    if (small) {
+      final smallRectangleDimensions =
+          Offset(size.width * .245, size.height * .0015);
+      rectangle = Rect.fromCenter(
+          center: center,
+          width: smallRectangleDimensions.dx,
+          height: smallRectangleDimensions.dy);
+    } else {
+      final bigRectangleDimensions =
+          Offset(size.width * .245, size.height * .0026);
+      rectangle = Rect.fromCenter(
+          center: center,
+          width: bigRectangleDimensions.dx,
+          height: bigRectangleDimensions.dy);
+    }
+    canvas.drawRect(rectangle, paint);
+  }
 
+  _draw() {
     /// [LEFT Wheel]
     _drawWheel(center: Offset(size.width * .338, size.height * .946));
-
-    /// [RIGHT Wheel]
-    _drawWheel(center: Offset(size.width * .658, size.height * .946));
-
-    ////////////// {TOP BIG PART FOOT} //////////////
-
-    ////////////// {MIDDLE BIG PART FOOT} //////////////
 
     final middlePartsPaint = Paint()..color = AppColors.middleBigWheelsLayer;
 
     /// middleType[columnIndex + 1][rowIndex + 1]
 
-    final middleType11 = Path()
-          ..moveTo(size.width * .224, size.height * .9175)
-          ..lineTo(size.width * .224, size.height * .9235)
-          ..lineTo(size.width * .2453, size.height * .9235)
-          ..lineTo(size.width * .264, size.height * .92)
-          ..lineTo(size.width * .264, size.height * .913)
-        //
-        ;
+    double soma = 0;
+    for (var i = 0; i < 3;) {
+      Path middleType11 = Path()
+            ..moveTo(size.width * .224, (size.height * .9175) + soma)
+            ..lineTo(size.width * .224, (size.height * .9235) + soma)
+            ..lineTo(size.width * .2453, (size.height * .9235) + soma)
+            ..lineTo(size.width * .264, (size.height * .92) + soma)
+            ..lineTo(size.width * .264, (size.height * .913) + soma)
+          //
+          ;
+      drawPathWithStroke(canvas, middleType11, middlePartsPaint);
+      soma += .025;
+      i++;
+    }
     final middleType12 = Path()
           ..moveTo(size.width * .224, size.height * .943)
           ..lineTo(size.width * .224, size.height * .95)
@@ -169,16 +147,15 @@ class Wheels {
         //
         ;
 
-    drawPathWithStroke(canvas, middleType11, middlePartsPaint);
-    drawPathWithStroke(canvas, middleType12, middlePartsPaint);
-    drawPathWithStroke(canvas, middleType13, middlePartsPaint);
+    // drawPathWithStroke(canvas, middleType12, middlePartsPaint);
+    // drawPathWithStroke(canvas, middleType13, middlePartsPaint);
 
-    drawPathWithStroke(canvas, middleType21, middlePartsPaint);
-    drawPathWithStroke(canvas, middleType22, middlePartsPaint);
-    drawPathWithStroke(canvas, middleType23, middlePartsPaint);
+    // drawPathWithStroke(canvas, middleType21, middlePartsPaint);
+    // drawPathWithStroke(canvas, middleType22, middlePartsPaint);
+    // drawPathWithStroke(canvas, middleType23, middlePartsPaint);
 
-    drawPathWithStroke(canvas, middleType31, middlePartsPaint);
-    drawPathWithStroke(canvas, middleType32, middlePartsPaint);
+    // drawPathWithStroke(canvas, middleType31, middlePartsPaint);
+    // drawPathWithStroke(canvas, middleType32, middlePartsPaint);
 
     ////////////// {[Rectangles - LEFT]} //////////////
 
@@ -190,27 +167,5 @@ class Wheels {
     _drawReactangle(
         Offset(size.width * .335, size.height * .98), middlePartsPaint,
         small: false);
-
-    ////////////// {[Rectangles - LEFT]} //////////////
-
-    ////////////// {MIDDLE BIG PART FOOT} //////////////
-
-    ////////////// {BOTTOM PART FOOT} //////////////
-
-    final wheelBottomTopDistancePos = size.height * .993;
-
-    for (var i = .24; i <= .752; i += .06) {
-      _drawBottomWheel(Offset(size.width * i, wheelBottomTopDistancePos));
-      if (i == .42) {
-        i += .13;
-        _drawBottomWheel(Offset(size.width * i, wheelBottomTopDistancePos));
-      }
-      if (i == .3 || i == .36 || i == .61 || i == .67) {
-        _drawBottomWheel(Offset(size.width * i, wheelBottomTopDistancePos),
-            small: false);
-      }
-    }
-
-    ////////////// {BOTTOM PART FOOT} //////////////
   }
 }
