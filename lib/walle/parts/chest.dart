@@ -172,11 +172,172 @@ class Chest {
 
     final sunPath = Path()..addOval(sun);
 
+    final sunColor = Paint()..color = AppColors.chestYellow;
+
     drawPathWithStroke(
         canvas, sunPath, Paint()..color = AppColors.insideRectangleGrey,
         strokeColor: AppColors.chestYellow,
         strokeWidth: xConv(2.6, realWidth, size));
 
+    ///////////////////////////// [SUN LIGHT 1] //////////////////////////////
+
+    final sunLight1 = Path()
+          ..moveTo(
+              xConv(200.5, realWidth, size), yConv(408.53, realHeight, size))
+          ..lineTo(
+              xConv(199.95, realWidth, size), yConv(407.78, realHeight, size))
+          ..quadraticBezierTo(
+            xConv(200.5, realWidth, size),
+            yConv(400.78, realHeight, size),
+            xConv(201.12, realWidth, size),
+            yConv(407.78, realHeight, size),
+          )
+          ..lineTo(
+              xConv(200.5, realWidth, size), yConv(409.53, realHeight, size))
+          ..close()
+        //
+        ;
+    canvas.drawPath(sunLight1, sunColor);
+
+    ///////////////////////////// [SUN LIGHT 2] //////////////////////////////
+
+    final sunLight2 = Path()
+          ..moveTo(
+              xConv(207.77, realWidth, size), yConv(410.45, realHeight, size))
+          ..lineTo(
+              xConv(203.57, realWidth, size), yConv(408.8, realHeight, size))
+          ..quadraticBezierTo(
+            xConv(204.78, realWidth, size),
+            yConv(408.22, realHeight, size),
+            xConv(204.3, realWidth, size),
+            yConv(409.7, realHeight, size),
+          )
+          ..lineTo(
+              xConv(207.77, realWidth, size), yConv(410.45, realHeight, size))
+          ..close()
+        //
+        ;
+    canvas.drawPath(sunLight2, sunColor);
+
+    ///////////////////////////// [SUN LIGHT 3] //////////////////////////////
+
+    final sunLight3 = Path()
+          ..moveTo(
+              xConv(203.7, realWidth, size), yConv(412.16, realHeight, size))
+          ..lineTo(
+              xConv(205.19, realWidth, size), yConv(408.8, realHeight, size))
+          ..quadraticBezierTo(
+            xConv(206.8, realWidth, size),
+            yConv(412.68, realHeight, size),
+            xConv(205.17, realWidth, size),
+            yConv(413.17, realHeight, size),
+          )
+          ..lineTo(
+              xConv(203.7, realWidth, size), yConv(412.68, realHeight, size))
+          ..close()
+        //
+        ;
+    canvas.drawPath(sunLight3, sunColor);
+
+    ///////////////////////////// [SUN LIGHT 4] //////////////////////////////
+
+    final sunLight4 = Path()
+          ..moveTo(
+              xConv(202.77, realWidth, size), yConv(414.19, realHeight, size))
+          ..lineTo(
+              xConv(204.55, realWidth, size), yConv(415.74, realHeight, size))
+          ..quadraticBezierTo(
+            xConv(205.12, realWidth, size),
+            yConv(416.8, realHeight, size),
+            xConv(203.57, realWidth, size),
+            yConv(416.55, realHeight, size),
+          )
+          ..lineTo(
+              xConv(202.77, realWidth, size), yConv(414.19, realHeight, size))
+          ..close()
+        //
+        ;
+    canvas.drawPath(sunLight4, sunColor);
+
+    ///////////////////////////// [SUN LIGHT 5] //////////////////////////////
+
+    final sunLight5 = Path()
+          ..moveTo(
+              xConv(200.52, realWidth, size), yConv(415.86, realHeight, size))
+          ..lineTo(
+              xConv(201.17, realWidth, size), yConv(417.68, realHeight, size))
+          ..quadraticBezierTo(
+            xConv(200.52, realWidth, size),
+            yConv(419.03, realHeight, size),
+            xConv(199.9, realWidth, size),
+            yConv(417.68, realHeight, size),
+          )
+          ..lineTo(
+              xConv(200.52, realWidth, size), yConv(415.86, realHeight, size))
+          ..close()
+        //
+        ;
+    canvas.drawPath(sunLight5, sunColor);
+
+    ///////////////////////////// [SUN LIGHT 6] //////////////////////////////
+
+    final sunLight6 = Path()
+          ..moveTo(
+              xConv(198.26, realWidth, size), yConv(414.89, realHeight, size))
+          ..lineTo(
+              xConv(197.52, realWidth, size), yConv(416.43, realHeight, size))
+          ..quadraticBezierTo(
+            xConv(195.69, realWidth, size),
+            yConv(416.8, realHeight, size),
+            xConv(196.66, realWidth, size),
+            yConv(415.65, realHeight, size),
+          )
+          ..lineTo(
+              xConv(198.26, realWidth, size), yConv(414.89, realHeight, size))
+          ..close()
+        //
+        ;
+    canvas.drawPath(sunLight6, sunColor);
+
+    ///////////////////////////// [SUN LIGHT 7] //////////////////////////////
+
+    final sunLight7 = Path()
+          ..moveTo(
+              xConv(197.3, realWidth, size), yConv(412.68, realHeight, size))
+          ..lineTo(
+              xConv(195.76, realWidth, size), yConv(413.23, realHeight, size))
+          ..quadraticBezierTo(
+            xConv(194.16, realWidth, size),
+            yConv(412.66, realHeight, size),
+            xConv(195.76, realWidth, size),
+            yConv(412.15, realHeight, size),
+          )
+          ..lineTo(
+              xConv(197.3, realWidth, size), yConv(412.68, realHeight, size))
+          ..close()
+        //
+        ;
+    canvas.drawPath(sunLight7, sunColor);
+
+    ///////////////////////////// [SUN LIGHT 8] //////////////////////////////
+
+    final sunLight8 = Path()
+          ..moveTo(
+              xConv(198.26, realWidth, size), yConv(410.45, realHeight, size))
+          ..lineTo(
+              xConv(196.5, realWidth, size), yConv(409.63, realHeight, size))
+          ..quadraticBezierTo(
+            xConv(196.15, realWidth, size),
+            yConv(408.28, realHeight, size),
+            xConv(197.48, realWidth, size),
+            yConv(408.88, realHeight, size),
+          )
+          ..lineTo(
+              xConv(198.26, realWidth, size), yConv(410.45, realHeight, size))
+          ..close()
+        //
+        ;
+    canvas.drawPath(sunLight8, sunColor);
     /////////////////////// {SUN} ///////////////////////
 
     /////////////////////// {AIR} ///////////////////////
