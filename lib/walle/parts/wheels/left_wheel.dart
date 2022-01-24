@@ -115,6 +115,28 @@ class LeftWheel {
       soma3 += .024;
     }
 
+    double soma4 = 0;
+    for (var i = 0; i < 3; i++) {
+      final middleType4 = Path()
+            ..moveTo(xConv(157.4, realWidth, size),
+                yConv(608.94, realHeight, size, soma: soma4))
+            ..lineTo(xConv(157.4, realWidth, size),
+                yConv(614.05, realHeight, size, soma: soma4))
+            ..lineTo(xConv(163.12, realWidth, size),
+                yConv(615.9, realHeight, size, soma: soma4))
+            ..lineTo(xConv(169.9, realWidth, size),
+                yConv(615.9, realHeight, size, soma: soma4))
+            ..lineTo(xConv(171.4, realWidth, size),
+                yConv(612.73, realHeight, size, soma: soma4))
+            ..lineTo(xConv(160.13, realWidth, size),
+                yConv(608.94, realHeight, size, soma: soma4))
+            ..close()
+          //
+          ;
+      drawPathWithStroke(canvas, middleType4, middlePartsPaint);
+      soma4 += .024;
+    }
+
     ////////////// {[Rectangles - LEFT]} //////////////
 
     _drawReactangle(
