@@ -188,7 +188,7 @@ class Chest {
               xConv(199.95, realWidth, size), yConv(407.78, realHeight, size))
           ..quadraticBezierTo(
             xConv(200.5, realWidth, size),
-            yConv(400.78, realHeight, size),
+            yConv(402.78, realHeight, size),
             xConv(201.12, realWidth, size),
             yConv(407.78, realHeight, size),
           )
@@ -205,12 +205,12 @@ class Chest {
           ..moveTo(
               xConv(207.77, realWidth, size), yConv(410.45, realHeight, size))
           ..lineTo(
-              xConv(203.57, realWidth, size), yConv(408.8, realHeight, size))
+              xConv(203.54, realWidth, size), yConv(408.85, realHeight, size))
           ..quadraticBezierTo(
-            xConv(204.78, realWidth, size),
-            yConv(408.22, realHeight, size),
-            xConv(204.3, realWidth, size),
-            yConv(409.7, realHeight, size),
+            xConv(205, realWidth, size),
+            yConv(408.17, realHeight, size),
+            xConv(204.7, realWidth, size),
+            yConv(409.5, realHeight, size),
           )
           ..lineTo(
               xConv(207.77, realWidth, size), yConv(410.45, realHeight, size))
