@@ -43,7 +43,7 @@ class Wheels {
     for (var i = .24; i <= .752; i += .06) {
       _drawBottomWheel(Offset(size.width * i, wheelBottomTopDistancePos));
       if (i == .42) {
-        i += .13;
+        i += .15;
         _drawBottomWheel(Offset(size.width * i, wheelBottomTopDistancePos));
       }
       if (i == .3 || i == .36 || i == .61 || i == .67) {
